@@ -15,6 +15,9 @@ import br.com.emailproject.service.EmailService;
 public class EmailBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
+	private static final String DESTINATARIO = "email@gmail.com";
+	private static final String ASSUNTO = "mudar senha";
 
 	@Inject
 	private EmailService emailService;
@@ -30,6 +33,6 @@ public class EmailBean implements Serializable {
 	private Email montarEmail() {
 		EmailLayout layout = new EmailLayout();
 		
-		return layout.montarEmailAdministrador("email@gmail.com", "mudar senha");
+		return layout.montarEmailAdministrador(DESTINATARIO,ASSUNTO );
 	}
 }
